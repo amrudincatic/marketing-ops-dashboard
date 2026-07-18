@@ -1,5 +1,10 @@
 # Metric Definitions
 
+> Demo note: this is a portfolio sample by Amrudin Catic
+> ([amrudincatic.com](https://amrudincatic.com)). It documents the analytics
+> setup for a marketing ops dashboard that runs on simulated data, and mirrors
+> the tracking work delivered for real clients.
+
 The formulas below are the exact math implemented in `src/data/metrics.js`.
 Every KPI tile, chart, and table column in the dashboard traces back to one
 of these rows. Nothing here is aspirational or simplified for the doc, it is

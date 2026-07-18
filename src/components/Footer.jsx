@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer panel">
       <span>Data is simulated for demonstration.</span>
       <span>Analytics tracking plan in docs/analytics</span>
-      <span>Built by Amrudin Catic</span>
+      <a href="https://amrudincatic.com" target="_blank" rel="noopener noreferrer">Built by Amrudin Catic</a>
     </footer>
   )
 }

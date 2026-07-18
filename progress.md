@@ -116,3 +116,16 @@ deploys on push to main. The live URL will be
 https://<your-username>.github.io/marketing-ops-dashboard/.
 
 Data is simulated. The analytics tracking plan lives in docs/analytics/.
+
+### Docs and footer update (post-completion)
+
+- Made the footer "Built by Amrudin Catic" a link that opens amrudincatic.com
+  in a new tab (target _blank with rel noopener noreferrer).
+- Rewrote README.md as a full, plain-language showcase: states clearly this is
+  a demo with simulated data and no backend, mirrors the kind of work delivered
+  for clients, explains in non-technical terms what the dashboard is and what
+  each panel shows, and frames what it demonstrates for prospective clients.
+- Added a short demo-context note (with the amrudincatic.com link) to the top of
+  each analytics doc.
+- Refreshed docs/screenshot.png to show the linked footer. 27 tests passing,
+  build clean, no em/en dashes.

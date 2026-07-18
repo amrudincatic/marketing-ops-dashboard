@@ -1,5 +1,10 @@
 # Tracking Plan
 
+> Demo note: this is a portfolio sample by Amrudin Catic
+> ([amrudincatic.com](https://amrudincatic.com)). It documents the analytics
+> setup for a marketing ops dashboard that runs on simulated data, and mirrors
+> the tracking work delivered for real clients.
+
 This is the event tracking plan behind the marketing ops dashboard. It defines
 every event a marketing engineer would implement through Google Tag Manager
 (GTM) to feed the funnel this dashboard visualizes (Visitors, Leads, MQL, SQL,

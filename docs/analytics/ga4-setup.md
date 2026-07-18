@@ -1,5 +1,10 @@
 # GA4 and GTM Setup Checklist
 
+> Demo note: this is a portfolio sample by Amrudin Catic
+> ([amrudincatic.com](https://amrudincatic.com)). It documents the analytics
+> setup for a marketing ops dashboard that runs on simulated data, and mirrors
+> the tracking work delivered for real clients.
+
 A practical, in-order checklist for standing up the tracking plan in
 `tracking-plan.md` on a real site. This is written the way it would be handed
 to a data or engineering team, not as a conceptual overview.

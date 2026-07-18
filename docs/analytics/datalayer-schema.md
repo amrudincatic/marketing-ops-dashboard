@@ -1,5 +1,10 @@
 # dataLayer Schema
 
+> Demo note: this is a portfolio sample by Amrudin Catic
+> ([amrudincatic.com](https://amrudincatic.com)). It documents the analytics
+> setup for a marketing ops dashboard that runs on simulated data, and mirrors
+> the tracking work delivered for real clients.
+
 This defines the GTM `dataLayer` object shape used across the site. Every
 push follows the same envelope: an `event` name, a `user` object, and an
 `attribution` object, plus event-specific properties.
