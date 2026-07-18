@@ -1,5 +1,6 @@
 import { generateDataset } from '../../scripts/generate-data.mjs'
 import { CHANNELS } from '../data/constants.js'
+import committed from '../data/mockData.json'
 
 test('generates 90 days for every channel with valid rows', () => {
   const ds = generateDataset()
@@ -22,4 +23,8 @@ test('generates 90 days for every channel with valid rows', () => {
 
 test('is deterministic across runs', () => {
   expect(generateDataset()).toEqual(generateDataset())
+})
+
+test('committed mockData.json matches a fresh generateDataset()', () => {
+  expect(committed).toEqual(generateDataset())
 })
