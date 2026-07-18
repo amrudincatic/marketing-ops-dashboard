@@ -73,3 +73,33 @@ test('DataTable renders a row per channel', () => {
   expect(screen.getByText('Google Ads')).toBeInTheDocument()
   expect(screen.getByText('Email')).toBeInTheDocument()
 })
+
+test('DataTable sorts by a column and toggles direction on repeat clicks', () => {
+  const channelRows = [
+    { channel: 'Google Ads', spend: 100, leads: 10, cpl: 10, roas: 4, revenue: 400 },
+    { channel: 'Email', spend: 10, leads: 5, cpl: 2, roas: 6, revenue: 60 },
+  ]
+  const { container } = render(<DataTable channelRows={channelRows} />)
+  const firstCellText = () => container.querySelector('tbody tr td').textContent
+  // default sort is spend descending, so Google Ads (100) comes first
+  expect(firstCellText()).toContain('Google Ads')
+  // sort by ROAS descending, so Email (6) comes first
+  fireEvent.click(screen.getByRole('columnheader', { name: /ROAS/ }))
+  expect(firstCellText()).toContain('Email')
+  // click ROAS again to toggle ascending, so Google Ads (4) comes first
+  fireEvent.click(screen.getByRole('columnheader', { name: /ROAS/ }))
+  expect(firstCellText()).toContain('Google Ads')
+})
+
+test('Funnel shows step conversion rates', () => {
+  const funnel = [
+    { stage: 'Visitors', count: 1000, pctOfTop: 1, stepRate: 1 },
+    { stage: 'Leads', count: 100, pctOfTop: 0.1, stepRate: 0.1 },
+    { stage: 'MQL', count: 60, pctOfTop: 0.06, stepRate: 0.6 },
+    { stage: 'SQL', count: 30, pctOfTop: 0.03, stepRate: 0.5 },
+    { stage: 'Customers', count: 9, pctOfTop: 0.009, stepRate: 0.3 },
+  ]
+  render(<Funnel funnel={funnel} />)
+  expect(screen.getByText('10.0%')).toBeInTheDocument()
+  expect(screen.getByText('60.0%')).toBeInTheDocument()
+})
