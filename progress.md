@@ -37,4 +37,24 @@ at the bottom.
   analytics tracking plan, aesthetic, testing, deploy). User approved.
 - Wrote the spec to docs/superpowers/specs/2026-07-18-marketing-ops-dashboard-design.md
 - Initialized git for the project.
-- Next: user reviews the spec, then transition to writing the implementation plan.
+- User reviewed and approved the spec.
+
+### Design direction and implementation plan
+
+- Pulled in frontend-design. Locked an "80s mission-control" synthwave
+  direction (an instrument panel, not a Miami-sunset poster) that bridges
+  Amrudin's existing systems/terminal brand:
+  - Palette: void #0B0713, panel #150C24, grid #2A1B44, neon accents magenta
+    #FF2E97, cyan #21E6FF, mint #2BF5B0 (positive), amber #FFB020. Each channel
+    gets its own neon.
+  - Type: Michroma (wordmark only), Chakra Petch (UI/labels), JetBrains Mono
+    (all numbers).
+  - Signature: KPI values render as glowing CRT readouts that count up and
+    bloom when filters change, so look and interactivity are one gesture.
+    Reduced motion respected.
+- Wrote the implementation plan to
+  docs/superpowers/plans/2026-07-18-marketing-ops-dashboard.md (15 tasks, TDD on
+  the data and metrics core, full component code, GitHub Pages deploy).
+- Ran the plan self-review: spec coverage complete, no placeholders, types
+  consistent.
+- Next: choose execution mode and build.
