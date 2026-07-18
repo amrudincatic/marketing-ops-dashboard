@@ -1,0 +1,7 @@
+.funnel { display: grid; gap: 10px; }
+.funnel__row { display: grid; grid-template-columns: 84px 1fr 64px 52px; align-items: center; gap: 10px; }
+.funnel__stage { font-family: var(--font-ui); font-size: 12px; color: var(--ink); }
+.funnel__bar-track { height: 16px; background: var(--void); border: var(--hairline); border-radius: 6px; overflow: hidden; }
+.funnel__bar { height: 100%; background: linear-gradient(90deg, var(--magenta), var(--violet)); box-shadow: var(--glow-magenta); }
+.funnel__count { font-family: var(--font-mono); font-size: 12px; text-align: right; color: var(--ink); }
+.funnel__rate { font-family: var(--font-mono); font-size: 11px; text-align: right; color: var(--cyan); }

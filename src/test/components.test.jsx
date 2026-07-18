@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import Header from '../components/Header.jsx'
 import { formatValue, formatPct } from '../data/format.js'
 import KpiTile from '../components/KpiTile.jsx'
+import Funnel from '../components/Funnel.jsx'
 
 const base = {
   generatedAt: '2026-06-30T06:00:00Z',
@@ -47,4 +48,17 @@ test('KpiTile renders a neutral delta for a neutral metric', () => {
   const { container } = render(<KpiTile def={def} value={120} prevValue={100} series={spark} />)
   expect(container.querySelector('.kpi__delta--neutral')).toBeInTheDocument()
   expect(container.querySelector('.kpi__delta--good')).toBeNull()
+})
+
+test('Funnel renders every stage with its count', () => {
+  const funnel = [
+    { stage: 'Visitors', count: 1000, pctOfTop: 1, stepRate: 1 },
+    { stage: 'Leads', count: 100, pctOfTop: 0.1, stepRate: 0.1 },
+    { stage: 'MQL', count: 60, pctOfTop: 0.06, stepRate: 0.6 },
+    { stage: 'SQL', count: 30, pctOfTop: 0.03, stepRate: 0.5 },
+    { stage: 'Customers', count: 9, pctOfTop: 0.009, stepRate: 0.3 },
+  ]
+  render(<Funnel funnel={funnel} />)
+  expect(screen.getByText('Visitors')).toBeInTheDocument()
+  expect(screen.getByText('1,000')).toBeInTheDocument()
 })
