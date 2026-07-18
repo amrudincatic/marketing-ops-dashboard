@@ -1,0 +1,34 @@
+:root {
+  /* surfaces */
+  --void: #0b0713;
+  --panel: #150c24;
+  --panel-2: #1c1030;
+  --grid: #2a1b44;
+
+  /* neon accents */
+  --magenta: #ff2e97;
+  --cyan: #21e6ff;
+  --violet: #a96bff;
+  --mint: #2bf5b0;
+  --amber: #ffb020;
+
+  /* semantic */
+  --good: var(--mint);
+  --bad: #ff4d6d;
+  --neutral: #8b7fb0;
+
+  /* text */
+  --ink: #eae6ff;
+  --muted: #9a8ec2;
+
+  /* type */
+  --font-display: 'Michroma', sans-serif;
+  --font-ui: 'Chakra Petch', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* effects */
+  --glow-magenta: 0 0 12px rgba(255, 46, 151, 0.55);
+  --glow-cyan: 0 0 12px rgba(33, 230, 255, 0.5);
+  --radius: 10px;
+  --hairline: 1px solid var(--grid);
+}
