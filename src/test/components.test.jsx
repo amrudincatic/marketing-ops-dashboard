@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import Header from '../components/Header.jsx'
 import { formatValue, formatPct } from '../data/format.js'
+import KpiTile from '../components/KpiTile.jsx'
 
 const base = {
   generatedAt: '2026-06-30T06:00:00Z',
@@ -24,4 +25,26 @@ test('formatValue formats by type', () => {
 test('formatPct signs positive change', () => {
   expect(formatPct(0.25)).toBe('+25.0%')
   expect(formatPct(-0.1)).toBe('-10.0%')
+})
+
+const spark = [1, 2, 3]
+
+test('KpiTile marks a lower-is-better metric good when its value drops', () => {
+  const def = { key: 'cpl', label: 'CPL', format: 'currency', betterWhenLower: true, seriesMetric: 'cpl' }
+  const { container } = render(<KpiTile def={def} value={80} prevValue={100} series={spark} />)
+  expect(container.querySelector('.kpi__delta--good')).toBeInTheDocument()
+  expect(container.querySelector('.kpi__delta--bad')).toBeNull()
+})
+
+test('KpiTile marks a lower-is-better metric bad when its value rises', () => {
+  const def = { key: 'cpl', label: 'CPL', format: 'currency', betterWhenLower: true, seriesMetric: 'cpl' }
+  const { container } = render(<KpiTile def={def} value={120} prevValue={100} series={spark} />)
+  expect(container.querySelector('.kpi__delta--bad')).toBeInTheDocument()
+})
+
+test('KpiTile renders a neutral delta for a neutral metric', () => {
+  const def = { key: 'spend', label: 'Spend', format: 'currency', betterWhenLower: false, seriesMetric: 'spend', neutral: true }
+  const { container } = render(<KpiTile def={def} value={120} prevValue={100} series={spark} />)
+  expect(container.querySelector('.kpi__delta--neutral')).toBeInTheDocument()
+  expect(container.querySelector('.kpi__delta--good')).toBeNull()
 })
