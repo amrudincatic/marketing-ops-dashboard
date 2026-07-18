@@ -58,3 +58,17 @@ at the bottom.
 - Ran the plan self-review: spec coverage complete, no placeholders, types
   consistent.
 - Next: choose execution mode and build.
+
+### Execution (subagent-driven, branch build/dashboard)
+
+- Chose subagent-driven development. Created branch build/dashboard off main.
+- Grouped the plan's 15 tasks into 5 review waves to keep it proportionate:
+  - Wave 1: Tasks 1-4 (scaffold, seeded data generator, metrics, data service)
+  - Wave 2: Tasks 5-6 (design tokens, app shell)
+  - Wave 3: Tasks 7-8 (header/filters, KPI tiles)
+  - Wave 4: Tasks 9-13 (funnel, trend, channel charts, table, footer)
+  - Wave 5: Tasks 14-15 (analytics docs, README + deploy)
+- Wave 1 complete: implementer built all four tasks, 14/14 tests passing with
+  clean output. TDD red-then-green confirmed for the generator and metrics.
+  Commits: 46f5171 (scaffold), 8af0c3c (data generator), 8969976 (metrics),
+  2dc21c4 (data service). Task review next.
