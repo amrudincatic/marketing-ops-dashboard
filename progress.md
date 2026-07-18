@@ -93,4 +93,26 @@ at the bottom.
 - Wave 5 (analytics tracking plan, dataLayer schema, metric definitions, GA4
   setup checklist, README, GitHub Pages deploy workflow) complete. 26 tests
   passing, build clean.
-- Next: final whole-branch review, then merge to main.
+- Final whole-branch review done (verdict: merge with fixes, no critical issues).
+  Applied the fixes: removed a footer doc link that would 404 on the deployed
+  site, corrected the SHA-256 example digests in the dataLayer schema, gated the
+  deploy workflow on the main branch (security hardening), and made sub-dollar
+  CPL show cents (Email CPL now reads $0.47 instead of $0).
+- Merged build/dashboard into main (fast-forward). 27 tests passing on main,
+  build clean. Deleted the build branch.
+
+## Project complete
+
+The dashboard is finished and on main. To run it locally:
+
+    npm install
+    npm run dev
+
+To run tests: `npm test`. To build: `npm run build`.
+
+To publish: create a GitHub repo, push main, and enable Pages (GitHub Actions
+source). The included workflow at .github/workflows/deploy.yml builds and
+deploys on push to main. The live URL will be
+https://<your-username>.github.io/marketing-ops-dashboard/.
+
+Data is simulated. The analytics tracking plan lives in docs/analytics/.
