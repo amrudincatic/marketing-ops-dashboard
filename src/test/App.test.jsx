@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import App from '../App.jsx'
 
-test('App renders a root region', () => {
+test('App renders KPI labels after data loads', async () => {
   render(<App />)
-  expect(screen.getByTestId('app-root')).toBeInTheDocument()
+  expect(await screen.findByText(/Spend/i, {}, { timeout: 2000 })).toBeInTheDocument()
 })
