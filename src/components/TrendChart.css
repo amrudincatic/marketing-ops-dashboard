@@ -1,0 +1,2 @@
+.trend__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.trend__toggle { display: flex; gap: 6px; }

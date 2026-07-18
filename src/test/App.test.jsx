@@ -3,5 +3,6 @@ import App from '../App.jsx'
 
 test('App renders KPI labels after data loads', async () => {
   render(<App />)
-  expect(await screen.findByText(/Spend/i, {}, { timeout: 2000 })).toBeInTheDocument()
+  const matches = await screen.findAllByText(/Spend/i, {}, { timeout: 2000 })
+  expect(matches.length).toBeGreaterThan(0)
 })
