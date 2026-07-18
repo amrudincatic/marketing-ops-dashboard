@@ -60,3 +60,7 @@ body {
 }
 
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+.footer { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.footer a { color: var(--cyan); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
