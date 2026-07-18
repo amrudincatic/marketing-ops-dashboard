@@ -38,7 +38,7 @@ it survives across page views to `purchase`.
   "event": "form_submit",
   "user": {
     "user_id": null,
-    "email_hash": "b1946ac92492d2347c6235b4d2611184",
+    "email_hash": "86e0b9e56c17cc4d12387e1949b85053fbe73bc3ce5a1188713a9d300cc6133d",
     "is_returning": false
   },
   "attribution": {
@@ -62,7 +62,7 @@ it survives across page views to `purchase`.
   "event": "purchase",
   "user": {
     "user_id": "usr_88213",
-    "email_hash": "9e107d9d372bb6826bd81d3542a419d6",
+    "email_hash": "7451c542958825607273193cfcdbd6624620c3838df106b945455ee029512c69",
     "is_returning": true
   },
   "attribution": {

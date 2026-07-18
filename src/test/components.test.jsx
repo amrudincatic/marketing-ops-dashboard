@@ -29,6 +29,11 @@ test('formatPct signs positive change', () => {
   expect(formatPct(-0.1)).toBe('-10.0%')
 })
 
+test('formatValue shows cents for sub-dollar currency', () => {
+  expect(formatValue(0.48, 'currency')).toBe('$0.48')
+  expect(formatValue(0, 'currency')).toBe('$0')
+})
+
 const spark = [1, 2, 3]
 
 test('KpiTile marks a lower-is-better metric good when its value drops', () => {

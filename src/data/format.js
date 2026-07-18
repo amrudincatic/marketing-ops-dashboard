@@ -1,5 +1,8 @@
 export function formatValue(value, format) {
-  if (format === 'currency') return '$' + Math.round(value).toLocaleString('en-US')
+  if (format === 'currency') {
+    if (value !== 0 && Math.abs(value) < 1) return '$' + value.toFixed(2)
+    return '$' + Math.round(value).toLocaleString('en-US')
+  }
   if (format === 'number') return Math.round(value).toLocaleString('en-US')
   if (format === 'x') return value.toFixed(2) + 'x'
   if (format === 'pct') return (value * 100).toFixed(1) + '%'
