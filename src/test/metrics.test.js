@@ -64,6 +64,10 @@ test('dailySeries supports raw and derived metrics', () => {
   expect(roas[0].value).toBeCloseTo(700 / 100) // day 1 revenue 700 / spend 100
 })
 
+test('dailySeries supports the cac derived metric', () => {
+  expect(dailySeries(rows, 'cac')[0].value).toBeCloseTo(100 / 3)
+})
+
 test('previousRange returns the equal-length preceding window', () => {
   expect(previousRange({ start: '2026-06-10', end: '2026-06-19' })).toEqual({
     start: '2026-05-31', end: '2026-06-09',

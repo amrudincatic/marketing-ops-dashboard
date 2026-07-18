@@ -1,0 +1,11 @@
+.kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+@media (max-width: 900px) { .kpi-row { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 520px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+.kpi { padding: 14px; }
+.kpi__label { font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.kpi__value { font-family: var(--font-mono); font-weight: 700; font-size: 26px; margin: 6px 0 2px; font-variant-numeric: tabular-nums; }
+.kpi__delta { font-family: var(--font-mono); font-size: 11px; }
+.kpi__delta--good { color: var(--good); }
+.kpi__delta--bad { color: var(--bad); }
+.kpi__delta--neutral { color: var(--muted); }
+.kpi__spark { margin-top: 8px; }

@@ -74,6 +74,7 @@ export function dailySeries(rows, metric) {
     let value
     if (metric === 'cpl') value = safeDiv(t.spend, t.leads)
     else if (metric === 'roas') value = safeDiv(t.revenue, t.spend)
+    else if (metric === 'cac') value = safeDiv(t.spend, t.customers)
     else value = t[metric]
     return { date, value }
   })

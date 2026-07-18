@@ -19,5 +19,5 @@ export const KPI_DEFS = [
   { key: 'cpl', label: 'CPL', format: 'currency', betterWhenLower: true, seriesMetric: 'cpl' },
   { key: 'roas', label: 'ROAS', format: 'x', betterWhenLower: false, seriesMetric: 'roas' },
   { key: 'revenue', label: 'Revenue', format: 'currency', betterWhenLower: false, seriesMetric: 'revenue' },
-  { key: 'cac', label: 'CAC', format: 'currency', betterWhenLower: true, seriesMetric: 'roas' },
+  { key: 'cac', label: 'CAC', format: 'currency', betterWhenLower: true, seriesMetric: 'cac' },
 ]
