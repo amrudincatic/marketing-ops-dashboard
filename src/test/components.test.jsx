@@ -3,6 +3,7 @@ import Header from '../components/Header.jsx'
 import { formatValue, formatPct } from '../data/format.js'
 import KpiTile from '../components/KpiTile.jsx'
 import Funnel from '../components/Funnel.jsx'
+import DataTable from '../components/DataTable.jsx'
 
 const base = {
   generatedAt: '2026-06-30T06:00:00Z',
@@ -61,4 +62,14 @@ test('Funnel renders every stage with its count', () => {
   render(<Funnel funnel={funnel} />)
   expect(screen.getByText('Visitors')).toBeInTheDocument()
   expect(screen.getByText('1,000')).toBeInTheDocument()
+})
+
+test('DataTable renders a row per channel', () => {
+  const channelRows = [
+    { channel: 'Google Ads', spend: 100, leads: 10, cpl: 10, roas: 4, revenue: 400 },
+    { channel: 'Email', spend: 10, leads: 5, cpl: 2, roas: 6, revenue: 60 },
+  ]
+  render(<DataTable channelRows={channelRows} />)
+  expect(screen.getByText('Google Ads')).toBeInTheDocument()
+  expect(screen.getByText('Email')).toBeInTheDocument()
 })
