@@ -71,4 +71,26 @@ at the bottom.
 - Wave 1 complete: implementer built all four tasks, 14/14 tests passing with
   clean output. TDD red-then-green confirmed for the generator and metrics.
   Commits: 46f5171 (scaffold), 8af0c3c (data generator), 8969976 (metrics),
-  2dc21c4 (data service). Task review next.
+  2dc21c4 (data service).
+- Each wave was built by a fresh subagent, then reviewed by a separate subagent
+  (spec compliance plus code quality), with small fixes applied where the review
+  found gaps.
+- Wave 1 review clean. Added a test that guards the committed dataset against
+  drift from the generator.
+- Wave 2 (design tokens, app shell) complete: 15 tests passing, build clean.
+- Wave 3 (header, filters, KPI tiles) complete: fixed the CAC sparkline to use a
+  real CAC series, added jsdom polyfills (ResizeObserver, matchMedia) so the
+  Recharts components render under test, added render tests for the KPI
+  delta-color logic. 19 tests passing.
+- Wave 4 (funnel, trend chart, channel bars, spend donut, sortable table,
+  footer) complete: added tests for table sorting and funnel step rates.
+  26 tests passing.
+- Visual verification: ran the dev server, confirmed the synthwave
+  mission-control look renders well and that the date-range and channel filters
+  recompute every panel (7-day view drops spend to $26,826 and the numbers stay
+  internally consistent across KPIs, funnel, and table). Saved
+  docs/screenshot.png.
+- Wave 5 (analytics tracking plan, dataLayer schema, metric definitions, GA4
+  setup checklist, README, GitHub Pages deploy workflow) complete. 26 tests
+  passing, build clean.
+- Next: final whole-branch review, then merge to main.
