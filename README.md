@@ -11,6 +11,8 @@ revenue, across every channel.
 > sample data, so it is safe to open and share without exposing anyone's real
 > campaign numbers.
 
+**View it live:** https://amrudincatic.github.io/marketing-ops-dashboard/
+
 Built by Amrudin Catic. More of my work: [amrudincatic.com](https://amrudincatic.com).
 
 ## What is this, in plain words
@@ -124,13 +126,11 @@ npm run build
 
 ## Live link and deployment
 
-Once this repository is pushed to GitHub and Pages is enabled (source: GitHub
-Actions), the included workflow at `.github/workflows/deploy.yml` builds and
-deploys the site automatically on every push to `main`. The live URL will be:
+Live site: **https://amrudincatic.github.io/marketing-ops-dashboard/**
 
-```
-https://<your-username>.github.io/marketing-ops-dashboard/
-```
+It is hosted on GitHub Pages and rebuilds automatically on every push to `main`
+via the included workflow at `.github/workflows/deploy.yml` (which runs the
+tests and the production build before publishing).
 
 ## About
 
