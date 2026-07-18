@@ -129,3 +129,16 @@ Data is simulated. The analytics tracking plan lives in docs/analytics/.
   each analytics doc.
 - Refreshed docs/screenshot.png to show the linked footer. 27 tests passing,
   build clean, no em/en dashes.
+
+### Published to GitHub Pages
+
+- Created the public repo amrudincatic/marketing-ops-dashboard and pushed main.
+- Set the README live URL to the real address and added a prominent view-it-live
+  link at the top.
+- Enabled GitHub Pages with the GitHub Actions source and set the repo homepage.
+- The deploy workflow ran on push and finished successfully; the CI runs the
+  tests and the production build before publishing.
+- Verified live: https://amrudincatic.github.io/marketing-ops-dashboard/ returns
+  200 and the deployed app renders fully in the browser (all panels, real data,
+  footer link to amrudincatic.com).
+- The site now redeploys automatically on every push to main.
