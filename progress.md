@@ -1,7 +1,6 @@
 # Progress Log
 
-What was done, newest at the top. The build log of 2026-07-18 below the first
-entry keeps its original order (oldest first).
+What was done, newest at the top.
 
 ## 2026-10-14: Unified with the Chata AI Tower standard
 
@@ -15,67 +14,52 @@ entry keeps its original order (oldest first).
   The live URL and the public repo came from Claude's memory.
 - New `todo.md` with a "Next session" section and one open item: self-host the
   fonts, which load from Google Fonts today.
-- New entries go at the top of this file. The 2026-07-18 log keeps its order:
-  the reorder script found only one dated heading, so it could not split it
-  into entries.
 - Spaced hyphens used as dashes rewritten in `README.md` and `docs/` (6 in all).
 - A push to `main` redeploys production with unchanged code.
 
 ## 2026-07-18
 
-### Kickoff and scoping
+### Published to GitHub Pages
 
-- Reviewed amrudincatic.com to ground the piece. Amrudin is a marketing
-  engineer working across paid media (Google Ads, GTM, GA, GMB, Meta), SEO
-  systems, content architecture, AI workflows, and growth systems. Identity:
-  "engineering, marketing, and AI are the same job."
-- Ran the brainstorming process to lock scope. Confirmed decisions:
-  - Focus: full-funnel marketing ops
-  - Scope: dashboard plus analytics tracking plan
-  - Stack: React + Vite + charts (Recharts)
-  - Aesthetic: 80s synthwave
-- Recommended Approach A (single-page command center). Awaiting confirmation
-  before finalizing the design.
+- Created the public repo amrudincatic/marketing-ops-dashboard and pushed main.
+- Set the README live URL to the real address and added a prominent view-it-live
+  link at the top.
+- Enabled GitHub Pages with the GitHub Actions source and set the repo homepage.
+- The deploy workflow ran on push and finished successfully; the CI runs the
+  tests and the production build before publishing.
+- Verified live: https://amrudincatic.github.io/marketing-ops-dashboard/ returns
+  200 and the deployed app renders fully in the browser (all panels, real data,
+  footer link to amrudincatic.com).
+- The site now redeploys automatically on every push to main.
 
-### Rules set by the user
+### Docs and footer update (post-completion)
 
-- No em-dashes or en-dashes in any text, ever.
-- Maintain this progress log for every step.
-- Keep a CLAUDE.md for repository guidance.
+- Made the footer "Built by Amrudin Catic" a link that opens amrudincatic.com
+  in a new tab (target _blank with rel noopener noreferrer).
+- Rewrote README.md as a full, plain-language showcase: states clearly this is
+  a demo with simulated data and no backend, mirrors the kind of work delivered
+  for clients, explains in non-technical terms what the dashboard is and what
+  each panel shows, and frames what it demonstrates for prospective clients.
+- Added a short demo-context note (with the amrudincatic.com link) to the top of
+  each analytics doc.
+- Refreshed docs/screenshot.png to show the linked footer. 27 tests passing,
+  build clean, no em/en dashes.
 
-### Files created
+## Project complete
 
-- CLAUDE.md
-- progress.md
+The dashboard is finished and on main. To run it locally:
 
-### Design approved
+    npm install
+    npm run dev
 
-- User picked Approach A (single-page command center).
-- Presented the full design (data model, layout, component architecture,
-  analytics tracking plan, aesthetic, testing, deploy). User approved.
-- Wrote the spec to docs/superpowers/specs/2026-07-18-marketing-ops-dashboard-design.md
-- Initialized git for the project.
-- User reviewed and approved the spec.
+To run tests: `npm test`. To build: `npm run build`.
 
-### Design direction and implementation plan
+To publish: create a GitHub repo, push main, and enable Pages (GitHub Actions
+source). The included workflow at .github/workflows/deploy.yml builds and
+deploys on push to main. The live URL will be
+https://<your-username>.github.io/marketing-ops-dashboard/.
 
-- Pulled in frontend-design. Locked an "80s mission-control" synthwave
-  direction (an instrument panel, not a Miami-sunset poster) that bridges
-  Amrudin's existing systems/terminal brand:
-  - Palette: void #0B0713, panel #150C24, grid #2A1B44, neon accents magenta
-    #FF2E97, cyan #21E6FF, mint #2BF5B0 (positive), amber #FFB020. Each channel
-    gets its own neon.
-  - Type: Michroma (wordmark only), Chakra Petch (UI/labels), JetBrains Mono
-    (all numbers).
-  - Signature: KPI values render as glowing CRT readouts that count up and
-    bloom when filters change, so look and interactivity are one gesture.
-    Reduced motion respected.
-- Wrote the implementation plan to
-  docs/superpowers/plans/2026-07-18-marketing-ops-dashboard.md (15 tasks, TDD on
-  the data and metrics core, full component code, GitHub Pages deploy).
-- Ran the plan self-review: spec coverage complete, no placeholders, types
-  consistent.
-- Next: choose execution mode and build.
+Data is simulated. The analytics tracking plan lives in docs/analytics/.
 
 ### Execution (subagent-driven, branch build/dashboard)
 
@@ -119,44 +103,56 @@ entry keeps its original order (oldest first).
 - Merged build/dashboard into main (fast-forward). 27 tests passing on main,
   build clean. Deleted the build branch.
 
-## Project complete
+### Design direction and implementation plan
 
-The dashboard is finished and on main. To run it locally:
+- Pulled in frontend-design. Locked an "80s mission-control" synthwave
+  direction (an instrument panel, not a Miami-sunset poster) that bridges
+  Amrudin's existing systems/terminal brand:
+  - Palette: void #0B0713, panel #150C24, grid #2A1B44, neon accents magenta
+    #FF2E97, cyan #21E6FF, mint #2BF5B0 (positive), amber #FFB020. Each channel
+    gets its own neon.
+  - Type: Michroma (wordmark only), Chakra Petch (UI/labels), JetBrains Mono
+    (all numbers).
+  - Signature: KPI values render as glowing CRT readouts that count up and
+    bloom when filters change, so look and interactivity are one gesture.
+    Reduced motion respected.
+- Wrote the implementation plan to
+  docs/superpowers/plans/2026-07-18-marketing-ops-dashboard.md (15 tasks, TDD on
+  the data and metrics core, full component code, GitHub Pages deploy).
+- Ran the plan self-review: spec coverage complete, no placeholders, types
+  consistent.
+- Next: choose execution mode and build.
 
-    npm install
-    npm run dev
+### Design approved
 
-To run tests: `npm test`. To build: `npm run build`.
+- User picked Approach A (single-page command center).
+- Presented the full design (data model, layout, component architecture,
+  analytics tracking plan, aesthetic, testing, deploy). User approved.
+- Wrote the spec to docs/superpowers/specs/2026-07-18-marketing-ops-dashboard-design.md
+- Initialized git for the project.
+- User reviewed and approved the spec.
 
-To publish: create a GitHub repo, push main, and enable Pages (GitHub Actions
-source). The included workflow at .github/workflows/deploy.yml builds and
-deploys on push to main. The live URL will be
-https://<your-username>.github.io/marketing-ops-dashboard/.
+### Files created
 
-Data is simulated. The analytics tracking plan lives in docs/analytics/.
+- CLAUDE.md
+- progress.md
 
-### Docs and footer update (post-completion)
+### Rules set by the user
 
-- Made the footer "Built by Amrudin Catic" a link that opens amrudincatic.com
-  in a new tab (target _blank with rel noopener noreferrer).
-- Rewrote README.md as a full, plain-language showcase: states clearly this is
-  a demo with simulated data and no backend, mirrors the kind of work delivered
-  for clients, explains in non-technical terms what the dashboard is and what
-  each panel shows, and frames what it demonstrates for prospective clients.
-- Added a short demo-context note (with the amrudincatic.com link) to the top of
-  each analytics doc.
-- Refreshed docs/screenshot.png to show the linked footer. 27 tests passing,
-  build clean, no em/en dashes.
+- No em-dashes or en-dashes in any text, ever.
+- Maintain this progress log for every step.
+- Keep a CLAUDE.md for repository guidance.
 
-### Published to GitHub Pages
+### Kickoff and scoping
 
-- Created the public repo amrudincatic/marketing-ops-dashboard and pushed main.
-- Set the README live URL to the real address and added a prominent view-it-live
-  link at the top.
-- Enabled GitHub Pages with the GitHub Actions source and set the repo homepage.
-- The deploy workflow ran on push and finished successfully; the CI runs the
-  tests and the production build before publishing.
-- Verified live: https://amrudincatic.github.io/marketing-ops-dashboard/ returns
-  200 and the deployed app renders fully in the browser (all panels, real data,
-  footer link to amrudincatic.com).
-- The site now redeploys automatically on every push to main.
+- Reviewed amrudincatic.com to ground the piece. Amrudin is a marketing
+  engineer working across paid media (Google Ads, GTM, GA, GMB, Meta), SEO
+  systems, content architecture, AI workflows, and growth systems. Identity:
+  "engineering, marketing, and AI are the same job."
+- Ran the brainstorming process to lock scope. Confirmed decisions:
+  - Focus: full-funnel marketing ops
+  - Scope: dashboard plus analytics tracking plan
+  - Stack: React + Vite + charts (Recharts)
+  - Aesthetic: 80s synthwave
+- Recommended Approach A (single-page command center). Awaiting confirmation
+  before finalizing the design.
