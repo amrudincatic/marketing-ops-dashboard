@@ -1,4 +1,4 @@
-# Marketing Ops Dashboard - Design Spec
+# Marketing Ops Dashboard: Design Spec
 
 Date: 2026-07-18
 Status: Approved

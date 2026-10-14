@@ -71,14 +71,14 @@ A dashboard is only as trustworthy as the tracking behind it. This project
 includes the measurement plan a marketing engineer would hand to a data or
 web team, in [`docs/analytics/`](docs/analytics/):
 
-- **`tracking-plan.md`** - the list of events to track (page views, form
+- **`tracking-plan.md`**: the list of events to track (page views, form
   submissions, demo requests, purchases) and which funnel stage each one feeds.
-- **`datalayer-schema.md`** - the exact data structure to push into Google Tag
+- **`datalayer-schema.md`**: the exact data structure to push into Google Tag
   Manager, with examples.
-- **`metric-definitions.md`** - the precise formula for every KPI. These match
+- **`metric-definitions.md`**: the precise formula for every KPI. These match
   the dashboard's actual math exactly, so the documentation and the product can
   never drift apart.
-- **`ga4-setup.md`** - a practical Google Analytics 4 and GTM setup checklist.
+- **`ga4-setup.md`**: a practical Google Analytics 4 and GTM setup checklist.
 
 ## Screenshot
 

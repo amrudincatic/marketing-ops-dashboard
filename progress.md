@@ -1,7 +1,25 @@
 # Progress Log
 
-Every meaningful step for the marketing ops dashboard project. Newest entries
-at the bottom.
+What was done, newest at the top. The build log of 2026-07-18 below the first
+entry keeps its original order (oldest first).
+
+## 2026-10-14: Unified with the Chata AI Tower standard
+
+- `CLAUDE.md` no longer repeats rules that now load in every session from the
+  global rules (`~/.claude/CLAUDE.md`) and the private root rules
+  (`~/GitHub/CLAUDE.md`): the dash rule (its advice to use hyphens instead
+  conflicted with them) and the progress log rule (its "newest at the bottom"
+  conflicted too). Added a pointer line to those rules.
+- `CLAUDE.md` has a Status section (live URL, public repo, code pointers) and a
+  "Run, test, deploy" section in place of the two "To be filled in" placeholders.
+  The live URL and the public repo came from Claude's memory.
+- New `todo.md` with a "Next session" section and one open item: self-host the
+  fonts, which load from Google Fonts today.
+- New entries go at the top of this file. The 2026-07-18 log keeps its order:
+  the reorder script found only one dated heading, so it could not split it
+  into entries.
+- Spaced hyphens used as dashes rewritten in `README.md` and `docs/` (6 in all).
+- A push to `main` redeploys production with unchanged code.
 
 ## 2026-07-18
 

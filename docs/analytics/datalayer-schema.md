@@ -98,7 +98,7 @@ it survives across page views to `purchase`.
 | `lead_id` | DLV `dlv.lead_id` | Joins `lead_created`, `mql_qualified`, `sql_accepted` in server-side container for funnel stitching |
 
 Triggers: each event name gets one Custom Event trigger in GTM (for example
-"CE - form_submit"), firing a corresponding GA4 Event tag that reads the
+"CE: form_submit"), firing a corresponding GA4 Event tag that reads the
 `dataLayer` variables above into GA4 event parameters. `purchase` uses GA4's
 built-in Ecommerce tag type instead of a generic event tag so `value` and
 `currency` populate GA4's revenue reporting correctly.
