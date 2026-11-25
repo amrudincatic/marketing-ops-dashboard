@@ -4,6 +4,9 @@ Open items only. When one is done, delete it here and record it in `progress.md`
 
 ## Next session
 
+Next: the one open item below, if the project is picked up again.
+Waits on: me, the project is archived
+
 Nothing is half-done. The dashboard is finished and live; the item below is the only open one.
 
 ## Open
